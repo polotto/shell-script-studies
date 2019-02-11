@@ -1,0 +1,93 @@
+exemplo do ZZ
+
+LPI Linux Essentials
+ooooasfafja
+aoaoaoa
+aaaa
+Show employers that you have the foundational skills required for your next job or promotion.
+
+Linux adoption continues to rise world-wide as individual users, government entities and industries ranging from automotive to space exploration embrace open source technologies. This expansion of open source in enterprise is redefining traditional Information and Communication Technology (ICT) job roles to require more Linux skills. Whether you’re starting your career in open source, or looking for advancement, independently verifying your skill set can help you stand out to hiring managers or your management team.
+
+The Linux Essentials Professional Development Certificate (PDC) also serves as an ideal stepping-stone to the more advanced LPIC Professional Certification track for Linux Systems Administrators.
+aiisafisa
+kaklsaflkafjasjfafd
+Ricardo 
+Current Version: 1.5 (Exam code 010-150)
+
+Prerequisites: There are no prerequisites for this certification
+
+Requirements: Passing the Linux Essentials 010 exam
+
+Validity Period: Lifetime
+
+Languages: English, German. The exam may be written in the following languages only at paper-based exam events: Portuguese (Brazilian), Italian, Spanish (Modern), Chinese (Simplified), Chinese (Traditional)
+
+Current Version: 4.0 (Exam codes 101-400 and 102-400)
+Current Version: 4.0 (Exam codes 101-400 and 102-400)
+Current Version: 4.0 (Exam codes 101-400 and 102-400)
+Aula DE VI
+Aula DE VI
+Aula DE VI
+
+    have an understanding of the Linux and open source industry and knowledge of the most popular open source Applications;
+    understand the major components of the Linux operating system, and have the technical proficiency to work on the Linux command line; and
+    have a basic understanding of security and administration related topics such as user/group management, working on the command line, and permissions.
+
+
+
+Aula DE VI
+Aula DE VI
+Aula DE VI
+LPIC-1: System Administrator
+To receive the Linux Essentials Certificate the candidate must:
+The digitar o que eu quiser kakak
+(kakakaka) 
+LPIC-1 is designed to reflect current research and validate a candidate's proficiency in real world system administration. The objectives are tied to real-world job skills, which we determine through job task analysis surveying during exam development.
+
+The world’s largest and most recognized Linux Certification
+
+LPIC-1 is the first certification in LPI’s multi-level Linux professional certification program. The LPIC-1 will validate the candidate's ability to perform maintenance tasks on the command line, install and configure a computer running Linux and configure basic networking.
+
+
+kakakakkaka
+sdfafafafdafasdf
+
+Prerequisites: There are no prerequisites for this certification
+
+Requirements: Passing exams 101 and 102
+
+Validity Period: 5 years
+
+Languages: English, German, Italian, Portuguese (Brazilian), Spanish (Modern), Chinese (Simplified), Chinese (Traditional) and Japanese
+
+To become LPIC-1 certified the candidate must be able to:
+
+    understand the architecture of a Linux system;
+    install and maintain a Linux workstation, including X11 and setup it up as a network client;
+    work at the Linux command line, including common GNU and Unix commands;
+    handle files and access permissions as well as system security; and
+    perform easy maintenance tasks: help users, add users to a larger system, backup and restore, shutdown and reboot.
+
+
+LPIC-2: Linux Engineer
+
+LPIC-2 is the second certification in LPI’s multi-level professional certification program. The LPIC-2 will validate the candidate's ability to administer small to medium–sized mixed networks. The candidate must have an active LPIC-1 certification to receive LPIC-2 certification, but the LPIC-1 and LPIC-2 exams may be taken in any order.
+
+Current Version: 4.5 (Exam codes 201-450 and 202-450). Note: the exams with the v4.0 objectives (201-400 and 202-400) will remain available until August 2017. You may write any version of the exams and they will count toward your LPIC-2 equally.
+
+Prerequisites: The candidate must have an active LPIC-1 certification to receive LPIC-2 certification, but the LPIC-1 and LPIC-2 exams may be taken in any order
+
+Requirements: Passing exams 201 and 202
+
+Validity Period: 5 years
+
+Languages: English, German, Portuguese (Brazilian), Japanese
+
+To become LPIC-2 certified the candidate must be able to:
+
+    perform advanced system administration, including common tasks regarding the Linux kernel, system startup and maintenance;
+    perform advanced Management of block storage and file systems as well as advanced networking and authentication and system security, including firewall and VPN;
+    install and configure fundamental network services, including DHCP, DNS,  SSH, Web servers, file servers using FTP, NFS and Samba, email delivery; and
+    supervise assistants and advise management on automation and purchases.
+
+

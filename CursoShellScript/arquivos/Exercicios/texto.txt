@@ -1,0 +1,24 @@
+# Arquivo de exemplo para expressao regular
+
+O Xubuntu é baseado no Ubuntu
+Linux
+LinuxUbuntu
+Linux Ubuntu
+O Sistema Operacional Linux
+O Linux
+Origem Linux
+OLinux
+
+# isso é um comentário
+bag
+bbg
+beg
+big
+bog
+bug
+beginner
+bigger
+bugzilla
+bege
+
+server.linux.com
