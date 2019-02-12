@@ -92,5 +92,17 @@ Comandos principais do shell script
 * `echo "curso de shell script"| tr [:lower:] [:upper:]` : converte as letras minúsculas para maiúculas
 
 ## cut - recorta somente alguns caracters para cada linha
-* `cut arquivo| cut -c1-5` : mostra somente dos caracters de 1 a 5 de cada linha do arquivo
+* `cat arquivo| cut -c1-5` : mostra somente dos caracters de 1 a 5 de cada linha do arquivo
+* `cat arquivo| cut -c1,2,5` : mostra somente os caracters 1, 2 e 5 de cada linha
+* `cat arquivo| cut -c5-` : a partir do caractere 5
+* `cat arquivo| cut -c-5` : até o caractere 5
+* `cat arquivo| cut -c1,2,10-` : caractere 1, 2 e a partir do 10
+* `cat arquivo| cut -d" " -f1` : mostra somente o primeiro campo onde a delimitação é espaço
+* `cat arquivo| cut -d" " -f1,3` : mostra somente o primeiro e o terceiro compo com delimitação de espaço
 
+## diff - compara os arquivos
+* `diff arquivo1 arquivo2` : mostra a diferença entre os arquivos
+* `diff arquivo1 arquivo2| cat -A` : mostra a diferença incluindo os caracteres especiais
+* `diff -w arquivo1 arquivo2` : mostra a diferença desconsiderando os espaços em branco
+* `diff -r dir1 dir2` : mostra a diferença entre diretórios
+ 
