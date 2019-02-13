@@ -106,3 +106,32 @@ Comandos principais do shell script
 * `diff -w arquivo1 arquivo2` : mostra a diferença desconsiderando os espaços em branco
 * `diff -r dir1 dir2` : mostra a diferença entre diretórios
  
+## grep - procura algo em uma saída
+* `grep NOME arquivo` : procura pelo NOME no arquivo
+* `grep NOME arquivo*` : procura pelo NOME em todos os arquivos que começam com arquivo*
+* `grep "NOME COMPLETO" arquivo` : procura pela string entre aspas
+* `grep -i NOME arquivo` : procura pelo NOME desconsiderando maiúsculas e minúsculas
+* `grep -c NOME arquivo` : conta quantas vezes encontrou NOME
+* `grep -v NOME arquivo` : não mostra a linha onde aparece o NOME, somente outras linhas
+* `grep -r NOME *` : procura por NOME dentro de todos os arquivos dentro de todos os subdiretórios relativos ao caminho atual
+* `grep -rl NOME *` : procura por NOME dentro de todos os arquivos e mostra somente o caminho do arquivo
+* `cat arquivo| grep NOME` : procura por nome no arquivo
+* `grep -A3 NOME arquivo` : procura por NOME e mostra 3 linhas após a ocorrência do NOME
+* `grep -B3 NOME arquivo` : procura por NOME e mostra 3 linhas antes da ocorrência do NOME
+* `fgrep` : não aceita expressões regulares
+* `egrep` : aceita expressões regulares extendidas
+
+## sed - filtra e transforma as entradas
+* `sed '1,3 d' arquivo` : não mostra as linhas 1 e 3
+* `sed '/Rafael/d' arquivo` : não mostra as linhas onde aparece Rafael
+* `cat arquivo| sed 's/Paulo/Joao/'` : substitui Paulo por Joao na primeira ocorrência
+* `echo 'Curso Linux Shell Script Linux'| sed 's/Linux/Unix/g` : substitui todas as ocorrências de Linux por Unix
+
+## more - mostra uma o conteúdo do arquivo de forma paginada, ENTER pula linha ESPAÇO muda página
+* `more arquivo` : mostra o conteúdo de maneira paginada
+
+## less - mostra o conteúdo do arquivo de forma paginada mas com mais opções: ENTER, ESPAÇO, SETAS
+* `less arquivo` : para pesquisa, /, n para navegar e ? para procura de baixo para cima
+* `cat -A arquivo| less` : pega o conteúdo do arquivo e pagina com less
+* `cat -A arquivo| grep a| less` : mostra toda linha onde aparece a letra a de forma paginada
+
