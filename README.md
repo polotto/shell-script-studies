@@ -173,3 +173,81 @@ Comandos principais do shell script
 ## () - isola os comandos dentro de um sub shell, nada é alterado na sessão atual
 * `(cd .. ; ls -l)` : executa o ls na pasta anterior se mudar o caminho atual
 
+# Redirecionamento de comandos
+
+## > - redireciona a saída padrão (stdout 1) para um novo arquivo, caso exista, sobre-escreve
+* `cat alunos.txt > alunos-temp.txt` : cria ou sobre-escreve a saída do cat no arquivo alunos-temp.txt
+
+## >> - redireciona a saída padrão (stdout 1) mas concatena com o conteúdo já existente no arquivo
+* `date >> aluons-temp.txt` : concatena ao final do arquivo alunos-temp.txt
+
+## 2> - redireciona a saída de erro (stdout 2) para um arquivo
+* `ls -l alunos.txt2 2> log.out` : redireciona a saída de erro para um arquivo
+
+## 2>> - rediciona a saída de erro (stdout 2) mas contatena com o conteúdo já existente no arquivo
+* `ls -l alunos.txt2 2>> log.out` : contatena ao final do arquivo a saída de erro
+
+## juntando os comandos
+* `ls -l alunos.txt > log.out 2> log-erro.out` : caso dê certo, coloca a saída em log.out, caso dê erro, coloca a saída em log-erro.out
+* `ls -l alunos.txt > log.out 2> &1` : coloca as duas saídas no mesmo arquivo
+* `ls -l alunos.txt >> log.out 2> &1` : coloca as duas saídas no mesmo arquivo concatenando com o conteúdo existente
+
+## /dev/null - lança a saída para o nada, buraco negro do linux
+* `ls -l alunos.txt 2> /dev/null` : caso dê erro, não mostra e não salva em lugar nenhum
+
+## < - redireciona a entrada
+* `tr 'a' 'Z' < alunos.txt` : rediciona o conteúdo do arquivo alunos.txt para o comando tr
+
+# variáveis
+## env - mostra as variáveis de ambiente exportadas da sessão
+* `env`
+
+## set - mostra as variáveis de ambiente exportadas e locais da sessão
+* `set`
+
+## declaração de variáveis
+* `VARIAVEL1=valor` : cria uma variável
+* `CURSO="curso de shell script"` : conteúdo com caracteres especiais
+
+## mostrar variáveis
+* `echo $VARIAVEL1` : mostra a variável na saída
+
+## variáveis especiais
+* `$$` : PID do shell atual
+* `$0` ou `$SHELL` : mostra o tipo do shell que está sendo executado
+
+## exportar variáveis para processos filhos
+```
+echo $$ # mostra o PID do bash atual
+TESTE=Curso # cria a variável
+export TESTE # exporta a variável para outros sub-processos
+bash # cria uma nova sessão do bash
+echo $$ # confirma q está em outro bash
+echo $TESTE # mostra q tem acesso a variável TESTE
+exit # sai do sub bash
+export VAR1=teste # exporta e cria a variável
+```
+
+## atribuido valores a variáveis
+* `HORA=`date +%H`` : atribui o valor do comando à variável
+* `MINUTO=$(date +%M)` : atribui o valor do comando à variável
+
+# Aspas no Shell
+## " - protege todas os caracteres menos $, / e `
+`echo "var $VAR"` : mostra o conteúdo das variável concatena com a string
+
+## ' - protege todos os caracteres
+`echo 'var $VAR'` : não mostra o conteúdo da variável
+
+## \ - escape de caracteres especiais
+* `echo cuso     shell` : o shell suprime os espaços
+* `echo curo\ \ \ shell` : o shell adiciona espaços
+* `echo \*` : mostra o *
+* `echo *` : mostra todos os itens do diretório atual
+
+# Comandos VI
+* `:1` : primeira linha
+* `:$` : última linha
+* `:!ls /tmp` : executa o ls e depois retorna ao VI
+* `/Linux` : procura Linux no arquivo, navega com `n`
+
