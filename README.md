@@ -135,3 +135,41 @@ Comandos principais do shell script
 * `cat -A arquivo| less` : pega o conteúdo do arquivo e pagina com less
 * `cat -A arquivo| grep a| less` : mostra toda linha onde aparece a letra a de forma paginada
 
+## find - procura por arquivos
+* `find ./ -name alunos` : procura por um arquivo com o nome alunos
+* `find ./ -name *copia*` : procura por que contenha no nome copia
+* `find ./ -user ricardo -name alunos` - procura por arquivo chamado alunos do usuário ricardo
+* `find ./ -name alunos* -exec ls -l {} \;` - aplica o comando ls -a para cada resultado da busca
+
+## date - mostra a data do sistema
+* `date +%d/m` : mostra somente a data com dia e mês
+
+## seq - mostra uma sequência de números
+* `seq 20` : inicia do 1 ao 20
+* `seq 5 12` : inicia em 5 e termina em 12
+* `seq 0 5 30` : inicia em 0 e vai até o 30 de 5 em 5
+
+## expr - comando para fazer contas
+* `expr 5 + 2` : faz 5 + 2
+* `expr 5 \* 2` : faz 5 * 2
+
+## bc - executa contas em uma string
+* `echo "(3 + 2) * 5"| bc` : resolve a expressão dentro do echo
+
+# Agrupamento de comandos no shell
+
+## | - saida do primeiro é colocado na entrada do próximo
+* `cat alunos.txt| wc -l` : conta o número de linhas do arquivo alunos.txt
+
+## ; - comando em sequência, se falhar o primeiro, continua a execução
+* `date ; echo linux ; ls` : executa em sequência os comandos
+
+## && - comando em sequência, somente se continua se o anterior for executado com sucesso
+* `ls alunos.txt && echo linux` : somente executa o segundo se o primeiro terminar com sucesso
+
+## || - somente executa o segundo se o primeiro comando falhar
+* `ls alunos.txt || echo linux` : somente executa o segundo se o primeiro falhar
+
+## () - isola os comandos dentro de um sub shell, nada é alterado na sessão atual
+* `(cd .. ; ls -l)` : executa o ls na pasta anterior se mudar o caminho atual
+
