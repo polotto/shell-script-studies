@@ -30,3 +30,7 @@ echo "Exibir data e hora atual: $DATAHORA "
 echo "==============================="
 echo "Listagem dos Alunos: "
 sort $ARQUIVOALUNOS # Caminho do arquivo relativo 
+
+DATAHORA=$(date +%H)
+echo "==============================="
+echo "Nova Hora Atual: $DATAHORA"
