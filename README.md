@@ -82,6 +82,9 @@ Comandos principais do shell script
 ## whatis - mostra o que esse comando faz
 * `whatis tr` : mostra a função do tr
 
+## whereis - mostra o caminho a localização em disco do comando
+* `whereis date` : mostra onde está o date em disco
+
 ## tr - troca um ou mais caracteres
 * `cat arquivo| tr a e` : troca toda ocorência de `a` por `e`
 * `cat arquivo| tr a-z A-Z` : troca toda letra minúscula por maiúscula
@@ -245,9 +248,81 @@ export VAR1=teste # exporta e cria a variável
 * `echo \*` : mostra o *
 * `echo *` : mostra todos os itens do diretório atual
 
-# Comandos VI
+# Comandos Vi
 * `:1` : primeira linha
 * `:$` : última linha
 * `:!ls /tmp` : executa o ls e depois retorna ao VI
-* `/Linux` : procura Linux no arquivo, navega com `n`
+* `/Linux` : procura Linux no arquivo de cima para baixo, navega com `n`
+* `?Linux` : procura Linux de baixo para cima
+* `dd` : recorta uma linha
+* `d4d` : recorta 4 linhas
+* `p` : cola a linha
+* `yy` : copia uma linha
+* `y5y` : copia 5 linhas
+* `w` : salva o arquivo
+* `wq` : sai e salva
+* `q!` : força a saída
+* `0` : vai para o início da linha
+* `$` : vai para o final da linha
+
+# File globbing
+## * - funciona para selecionar um nome genérico, pode ter um ou mais caracteres após
+* `ls -l AULA*` : aplica ls -l para qualquer arquivo que possui um nome que inicia com AULA
+
+## [] - delimita a seleção para somente uma lista caracteres
+* `ls -l AULA[123]` : somente retorna os nomes que iniciam com AULA1, AULA2 e AULA3
+* `ls -l Aul[Aa][1-3]` : somente aquivos com Aula* ou AulA* que terminam com 1, 2 ou 3
+
+## {} - delimita a seleção um grupo de strings
+* `ls -l {Aula,AULA}3` : procura por Aula3 e por AULA3
+
+## ? - delimita para somente um caractere qualquer
+* `ls -l Aula?` : procura por Aula seguido de somente um caractere
+* `ls -l Aula??` : procura por Aula seguido de 2 caracteres
+
+# Expressões regulares
+## [] - delimita um grupo de caracteres
+* `egrep "b[aei]g" texto.txt` : probura por bag, beg e big
+
+## ˆ - marcação de início
+* `egrep "ˆLinux" texto.txt` : toda linha que comece com Linux
+
+## $ - marcação de final de linha
+* `egrep "Linux$" texto.txt` : toda linha que termine com Linux
+* `egrep "ˆ$" texto.txt` : mostra todas as linhas em branco
+* `egrep -v "ˆ$" texto.txt` : não mostra as linhas em branco
+
+## * - o caractere anterior deve ocorrer nenuma, uma ou várias vezes
+* `egrep "b[a-i]g*" texto.txt` : a letra g pode aparecer nenhumo, uma ou várias vezes
+
+## + - o caractere anterior deve ocorrer uma ou mais vezes 
+* `egrep "b[a-i]g+" texto.txt` : a letra g deve aparecer uma ou mais vezes
+
+## ? - o caractere anterior pode aparecer nenhuma ou apenas uma vez
+* `egrep "b[a-i]g?" texto.txt` : a letra g pode aparecer nenuma ou apenas uma vez
+
+## . - representa um caractere qualquer na expressão
+* `egrep "O.Linux" texto.txt` : procura por frases com qualquer caractere entre O e Linux
+* `egrep "O.*Linux" texto.txt` : procura por frases que tenha O seguido de qualquer coisa e Linux, considera também OLinux
+
+## \ - protege o carctere para ele não fazer parte da expressão regular
+* `egrep "[Ll]inux\." texto.txt` : interpreta o . como um caractere e não como parte da expressão: linux.com seria selecionado
+
+# Executando um script
+## #! (shebang) - especifica um interpretador para o script
+* `#!/bin/bash` : especifica para utilizar o bash como interpretador do script atual
+
+## chmod - modifica as permissões do arquivo
+* `chmod +x script.sh` : adiciona permissão de execução para todos os usuários
+* `chmod 744` : adiciona permissão de execução para o usuário atual e somente leitura para os outros
+
+## executando um script
+* `./script.sh` : abre um shell filho do atual, executa o script e retorna o resultado
+* `source script.sh` ou `. script.sh`: executa o script na sessão atual do shell
+* `bash script.sh` : executa o script com um interpretador específico
+
+## alterando o PATH
+* `PATH="$PATH:/home/usuario/Cursos/ShellScript/Scripts"` : adiciona ao PATH o meu diretório de scripts
+* `~/.profile` : arquivo responsável por configurar a variável $PATH ao inicial a sessão do usuário
+
 
