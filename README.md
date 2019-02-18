@@ -2,7 +2,6 @@
 Comandos principais do shell script
 
 # Principais comandos
-
 ## cd - navegar entre os diretórios
 * `cd ..` ou `cd ../../Downloads` : subir de nivel
 * `cd -` : volta para o anterior
@@ -357,4 +356,3 @@ export VAR1=teste # exporta e cria a variável
 * `$#` : Quantidade de parâmetros
 * `$*` : Todos os parâmetros inseridos
 * `$1-9` : Cada um dos parâmetros
-
