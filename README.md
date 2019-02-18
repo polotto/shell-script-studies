@@ -325,4 +325,36 @@ export VAR1=teste # exporta e cria a variável
 * `PATH="$PATH:/home/usuario/Cursos/ShellScript/Scripts"` : adiciona ao PATH o meu diretório de scripts
 * `~/.profile` : arquivo responsável por configurar a variável $PATH ao inicial a sessão do usuário
 
+# Exit codes
+## códigos
+* 0 a 255 : 0 é sucesso, qualquer outra coisa é não sucesso
+
+## consultando o código
+* `$?` : variável que armazena o código de saída(retorno) do último comando
+* `echo $?` : mostra o valor que está na variável
+* `RETURN_CODE=$?` : armazena o valor do código de erro em uma variável
+
+## informando o código
+* `exit 10` : sai do script com o código 10
+* `exit` : sai do comando com o código 0
+
+# read - ler uma entrada do usuário
+## ler uma variável
+* `read NOME` : o valor de entrada e armazena em NOME
+
+## lendo múltiplas entradas
+* `read VAR1 VAR2 VAR3` : se digitar "cuso shell script" cada parte separada por espaço e armazena em uma variável diferente
+
+## modo prompt - adicionando texto para o usuário
+* `read -p "Informe o seu curso: " CURSO` : mostra o usuário o texto, recebe a entrada e armazena em CURSO
+
+## modo secret - escode o que foi digitado
+* `read -s CODIGO` : armazena que o usuário digita mas não mostra no terminal
+
+# Argumentos - ler parâmetro passados para o programa quando ele é iniciado
+## variávais dos argumentos
+* `$0` : Nome do programa
+* `$#` : Quantidade de parâmetros
+* `$*` : Todos os parâmetros inseridos
+* `$1-9` : Cada um dos parâmetros
 
