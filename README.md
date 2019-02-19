@@ -358,3 +358,115 @@ export VAR1=teste # exporta e cria a variável
 * `$*` : Todos os parâmetros inseridos
 * `$1-9` : Cada um dos parâmetros
 
+# Estruturas condicionais
+## if
+```
+if <comando>
+then
+	comando1
+	comando2
+	comando3
+fi
+
+if <comando>
+then
+	comando1
+else
+	comando2
+fi
+
+if <comando>
+then
+	comando1
+elif <comando>
+then 
+	comando2
+else
+	comando3
+fi
+```
+
+## test
+* `test <expressão>` : testa a expressão e retorna 0 para sucesso ou outra coisa para erro
+* `test 50 -qt 100` : se 50 é maior que 100
+* `[ 50 -gt 100]` : omite a palavra teste e usa []
+* exemplo com if:
+```
+VAR1=12
+if test "$VAR1" -gt 10
+then
+	echo sucesso
+fi
+
+if ["$VAR1"-gt 10]
+then
+	echo sucsso
+fi
+```
+
+## ! - negação
+```
+VAR=12
+if [! "$VAR1" -gt 10]
+then
+	# não entra nessa condição
+	echo sucesso
+fi
+```
+
+## -a - e (and)
+```
+VAR=12
+if ["$VAR1" -gt 10 -a "$VAR1" -lt 20] # AND
+then
+	echo sucesso
+fi
+```
+
+## -o - ou (or)
+```
+VAR=12
+if ["$VAR1" -gt 10 -o "$VAR1" -eq 5] # OR 
+then
+        echo sucesso
+fi
+```
+
+# Case
+```
+case $valor in
+	padrão1)
+		comandos
+		;;
+	padrão2)
+		comandos
+		;;
+	*)
+		comandos
+		;;
+esac
+
+case $opcao in
+	1)
+		echo "opção incluir"
+		;;
+	2)
+		echo "opção remover"
+		;;
+	*)
+		echo "opção inexistente"
+		;;
+esac
+
+case $caracter in
+	[0-9])
+		echo "o caractere informado é um número"
+		;;
+	[A-Z])
+		echo "o caractere informado é uma letra maiúscula"
+		;;
+	[a-z])
+		echo "o caractere informado é uma letra minúscula"
+		;;
+esac
+```
