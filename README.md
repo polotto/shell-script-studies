@@ -2,7 +2,6 @@
 Comandos principais do shell script
 
 # Principais comandos
-
 ## cd - navegar entre os diretórios
 * `cd ..` ou `cd ../../Downloads` : subir de nivel
 * `cd -` : volta para o anterior
