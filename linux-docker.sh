@@ -5,4 +5,6 @@ docker run \
   -e HOST_IP=$(ifconfig en0 | awk '/ *inet /{print $2}') \
   -v "$(pwd)":/src \
   -t -i \
-  ubuntu /bin/bash
+  alpine sh
+#  ubuntu bash
+#  debian bash 
