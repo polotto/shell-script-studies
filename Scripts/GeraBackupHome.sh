@@ -21,7 +21,8 @@ create_backup()
 }
 
 # caso não exista, cria o diretório de backup
-if ! ls "$BACKUPDIR" > /dev/null 2>&1
+#if ! ls "$BACKUPDIR" > /dev/null 2>&1
+if [ ! -d $BACKUPDIR  ]
 then
 	echo "Diretório para backup não encontrado"
 	echo "-> Criando o diretório: $BACKUPDIR"
