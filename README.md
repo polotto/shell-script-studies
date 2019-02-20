@@ -158,6 +158,9 @@ Comandos principais do shell script
 ## bc - executa contas em uma string
 * `echo "(3 + 2) * 5"| bc` : resolve a expressão dentro do echo
 
+## stat - mostra informações do arquivo na partição atual
+* `stat alunos.txt` : mostra informações para o arquivo alunos.txt
+
 # Agrupamento de comandos no shell
 
 ## | - saida do primeiro é colocado na entrada do próximo
