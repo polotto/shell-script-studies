@@ -12,4 +12,4 @@ then
 	echo "Boa noite!"
 fi
 
-echo "A hora atual é: $(date +%I:%m\ %p)"
+echo "A hora atual é: $(date +"%I:%m %p")"

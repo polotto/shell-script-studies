@@ -15,13 +15,16 @@ create_backup()
 	NOMEBACKUP=$(echo "backup_home_$DATENOW.tgz")
 
 	echo "-> Criando backup..."
-	tar -cvzf "$BACKUPDIR/$NOMEBACKUP" $HOME
+	tar -cvzf "$BACKUPDIR/$NOMEBACKUP" --absolute-names \
+	    --exclude="$HOME/Google Drive" --exclude="$HOME/Videos" \
+	    --exclude="$BACKUPDIR" "$HOME"/*
 	echo "-> O backup $NOMEBACKUP foi criado em $BACKUPDIR"
 	echo "Backup concluído!"
 }
 
 # caso não exista, cria o diretório de backup
-if ! ls "$BACKUPDIR" > /dev/null 2>&1
+#if ! ls "$BACKUPDIR" > /dev/null 2>&1
+if [ ! -d "$BACKUPDIR"  ]
 then
 	echo "Diretório para backup não encontrado"
 	echo "-> Criando o diretório: $BACKUPDIR"
@@ -42,18 +45,22 @@ else
 		if [ $DATENOW -eq $DATEFILE -a $NUMBERWEEKNOW -eq $NUMBERWEEKFILE ]
 		then
 			echo "Já foi gerado um backup no diretório $BACKUPDIR nos últimos 7 dias."
-			read -p "-> Deseja continuar? (N/s): " OPT
-			if [ $OPT = 's'  ]
+			echo "-> Deseja continuar? (N/s): "
+			read -n1 OPT
+			if [ "$OPT" = "n" -o "$OPT" = "N" -o "$OPT" = ""  ]
+			then
+				echo "Backup abortado!"
+				exit 1
+			elif [ "$OPT" = "s" -o "$OPT" = "S"  ]
 			then
 				create_backup
 				echo "Backup criado para a mesma semana"
 			else
-				echo "-> Saindo: exit code 1"
-				exit 1
+				echo "Opção inválida"
+				exit 2
 			fi		
 		else
 			create_backup
 		fi
 	fi
 fi
-
