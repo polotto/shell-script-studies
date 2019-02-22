@@ -6,7 +6,7 @@ CVMAP=/src # path inside of container to be mapped
 
 echo "Volume that will be mapped (local : container) -> $LMAP : $CVMAP"
 echo "Choose a linux to run in a interactive mode:"
-echo -e "1 - Ubuntu;\n2 - Debian;\n3 - Alpine;\ns - stop a container;\nq - quit"
+echo -e "1 - Ubuntu;\n2 - Debian;\n3 - Alpine;\nc - connect to current running container;\ns - stop a container;\nq - quit"
 read -p "Option: " OPT
 
 clear
@@ -14,10 +14,12 @@ case $OPT in
 	1)
 		docker run \
   		--name $CONTAINERNAME \
-  		-e HOST_IP=$(ifconfig en0 | awk '/ *inet /{print $2}') \
+		-e HOST_IP=$(ifconfig en0 | awk '/ *inet /{print $2}') \
   		-v "$LMAP":"$CVMAP" \
-  		-t -i \
-  		ubuntu bash
+		-d -t -i \
+  		ubuntu
+
+		docker exec -it $CONTAINERNAME bash
 		;;
 	2)
 		docker run \
@@ -34,6 +36,9 @@ case $OPT in
   		-v "$LMAP":"$CVMAP" \
 		-t -i \
 		alpine sh
+		;;
+	c)
+		docker exec -it $CONTAINERNAME bash
 		;;
 	s)
 		docker container stop $CONTAINERNAME

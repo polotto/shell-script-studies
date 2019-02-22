@@ -472,3 +472,160 @@ case $caracter in
 		;;
 esac
 ```
+
+# Loops
+## for
+```
+for var in val1 val2 ... valn
+do
+	comando1
+	comando2
+	...
+done
+
+for num in 1 2 3 4 5
+do
+	echo "O número atual é $num!"
+done
+
+for arquivo in alunos*
+do
+	echo "O arquivo atual é $arquivo"
+done
+
+for sequencia in $(seq 5 10)
+do
+	echo "O número é $sequencia"
+done
+
+for sequencia in {5..10}
+do
+	echo "O número é $sequencia"
+done
+
+for sequencia in $(seq 1 5 50)
+do
+	echo "num $sequencia"
+done
+
+for sequencia in {1..50..5}
+do
+	echo "O número é $sequencia"
+done
+
+for i in $(cat arquivo.txt)
+do
+	echo "O valor atual é $i"
+done
+
+for ((i=5 ; i <=20 ; i++))
+do
+	echo "o número é $i"
+done
+```
+
+## IFS - internal filed separator
+* `set|grep IFS` : mostra os valores padrões do IFS
+```
+for var in $(cat ../CursoShellScript/arquivos/alunos2.txt)
+do
+	echo "exibindo valor: $var"
+done
+
+# Exibe um valor a cada vez q encontrar um espaço ou uma quebra de linha
+# exibindo valor: Andre
+# exibindo valor: Gonçalves
+# exibindo valor: Paulo
+# exibindo valor: Freitas
+# exibindo valor: Maria
+# exibindo valor: Antonieto
+```
+
+### Alterando o IFS
+```
+OLDIFS=$IFS
+IFS=:
+for var in $(tail /etc/passwd)
+do
+	echo "exibindo $var"
+done
+IFS=$OLDIFS
+```
+
+## while
+```
+while <comando>
+do
+	comando1
+	comando2
+	...
+done
+
+x=1
+while [ $x -le 20 ]
+do
+	echo "O valor atual é $x"
+	x=$(expr $x + 1)
+done
+
+while [ $(px axu | wc -l) -lt 300  ]
+do
+	echo "Tudo ok"
+	sleep 30
+done
+
+while ls /var/lock/processo.lock > /dev/null
+do
+	echo "Processo em execução"
+	sleep 30
+done
+```
+
+## util
+```
+until <comando>
+do
+	comando 1
+	comando 2
+done
+
+x=1
+until [ $x -eq 20 ]
+do
+	echo O valor atual é $x
+	x=$(expr $x + 1)
+done
+
+until [ $(ps axu | wc -l) -ge 300 ]
+do
+	echo "tudo ok"
+	sleep 30
+done
+```
+
+## break
+```
+while ls /var/lock/processo.lock > /dev/null
+do
+	if [ $(date +%H) -gt 18 ]
+	then
+		break
+	fi
+	echo "processo em execução"
+	sleep 30
+done
+```
+
+## continue
+```
+while ls /var/lock/processo.lock > /dev/null
+do
+        if [ $(date +%H) -gt 18 ]
+        then
+                sleep 3600
+		continue
+        fi
+        echo "processo em execução"
+        sleep 30
+done
+```
