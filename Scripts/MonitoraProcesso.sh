@@ -1,14 +1,21 @@
 #!/bin/bash
 
+TIME=5
+
 if [ $# -ne 1 ]
 then
 	echo "insira um parametro para o script"
+	echo "./MonitoraProcesso.sh <processo>"
 	exit 1
 fi
 
-until ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
-do 
-	echo "ATENCAO!!!!!! O processo $1 NAO esta em execucao!"
-	sleep 2
+while true 
+do
+	if ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
+	then
+		sleep $TIME
+	else
+		echo "ATENCAO!!!!!! O processo $1 NAO esta em execucao!"
+		sleep $TIME
+	fi
 done
-echo "Processo em execucao: $(ps axu | grep "$1" | grep -v grep | grep -v $0 | head -1)"

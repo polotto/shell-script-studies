@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UID_MIN=$(cat /etc/login.defs | egrep "^UID_MIN" | cut -d" " -f2)
+UID_MIN=$(grep "^UID_MIN" /etc/login.defs | tr -s "\t" | cut -f2)
 UID_MAX=$(cat /etc/login.defs | egrep "^UID_MAX" | cut -d$'\t' -f4)
 
 echo -e "Usuario\tUID\tDIR HOME\tNOME OU DESCRICAO"

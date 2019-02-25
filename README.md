@@ -323,6 +323,7 @@ export VAR1=teste # exporta e cria a variável
 * `./script.sh` : abre um shell filho do atual, executa o script e retorna o resultado
 * `source script.sh` ou `. script.sh`: executa o script na sessão atual do shell
 * `bash script.sh` : executa o script com um interpretador específico
+* `./script.sh &` : executa o script em modo deamon, ou seja, em background
 
 ## alterando o PATH
 * `PATH="$PATH:/home/usuario/Cursos/ShellScript/Scripts"` : adiciona ao PATH o meu diretório de scripts

@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1551117955,,"x"
+|2,0,1551128764,,"x"
 :22
 |2,0,1551116207,,"22"
 :28
@@ -29,265 +29,347 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	$(stat -c '%s' "$ARQ")
-|3,1,0,0,1,0,1551113554,"$(stat -c '%s' \"$ARQ\")"
-"1	LINE	0
-		DESC=$(echo "$user" | cut -d":" -f5)
-|3,0,1,1,1,0,1551107818,"	DESC=$(echo \"$user\" | cut -d\":\" -f5)"
-"2	LINE	0
-		UID_U=$(echo "$user" | cut -d":" -f3)
-|3,0,2,1,1,0,1551107815,"	UID_U=$(echo \"$user\" | cut -d\":\" -f3)"
+"0	CHAR	0
+	ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
+	
+|3,0,0,0,2,0,1551127722,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
+""1	LINE	0
+	echo "Processo em execucao: $(ps axu | grep "$1" | grep -v grep | grep -v $0 | head -1)"
+|3,1,1,1,1,0,1551127850,"echo \"Processo em execucao: $(ps axu | grep \"$1\" | grep -v grep | grep -v $0 | head -1)\""
+"2	CHAR	0
+	ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
+	
+|3,0,2,0,2,0,1551127735,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
 "3	LINE	0
-	
-|3,0,3,1,1,0,1551107796,""
+	UID_MIN=$(grep  "^UID_MIN" /etc/login.defs | egrep  | tr -s "\t"  | cut -f2)
+|3,0,3,1,1,0,1551127204,"UID_MIN=$(grep  \"^UID_MIN\" /etc/login.defs | egrep  | tr -s \"\\t\"  | cut -f2)"
 "4	LINE	0
-			
-|3,0,4,1,1,0,1551107795,"		"
+		DESC=$(echo "$user" | cut -d":" -f5)
+|3,0,4,1,1,0,1551107818,"	DESC=$(echo \"$user\" | cut -d\":\" -f5)"
 "5	LINE	0
-	
-|3,0,5,1,1,0,1551107793,""
+		UID_U=$(echo "$user" | cut -d":" -f3)
+|3,0,5,1,1,0,1551107815,"	UID_U=$(echo \"$user\" | cut -d\":\" -f3)"
 "6	LINE	0
-			echo -e "$USERNAME\t$UID_U\t$HOME_U\t\t$DESC"
-|3,0,6,1,1,0,1551107792,"		echo -e \"$USERNAME\\t$UID_U\\t$HOME_U\\t\\t$DESC\""
+	
+|3,0,6,1,1,0,1551107796,""
 "7	LINE	0
-		fi
-|3,0,7,1,1,0,1551107791,"	fi"
+			
+|3,0,7,1,1,0,1551107795,"		"
 "8	LINE	0
-		then
-|3,0,8,1,1,0,1551107789,"	then"
+	
+|3,0,8,1,1,0,1551107793,""
 "9	LINE	0
-		if [ $UID_U -ge $UID_MIN -a $UID_U -le $UID_MAX ]
-|3,0,9,1,1,0,1551107788,"	if [ $UID_U -ge $UID_MIN -a $UID_U -le $UID_MAX ]"
+			echo -e "$USERNAME\t$UID_U\t$HOME_U\t\t$DESC"
+|3,0,9,1,1,0,1551107792,"		echo -e \"$USERNAME\\t$UID_U\\t$HOME_U\\t\\t$DESC\""
 "-	CHAR	0
-	PROCESSO
-|3,0,36,0,1,0,1551107357,"PROCESSO"
+	  
+|3,0,36,0,1,0,1551127209,"  "
 
 # File marks:
-'0  17  0  ~/Scripts/CriaArquivo.sh
-|4,48,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
-'1  30  17  ~/Scripts/CriaArquivo.sh
-|4,49,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
-'2  30  17  ~/Scripts/CriaArquivo.sh
-|4,50,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
-'3  25  4  ~/Scripts/CriaArquivo.sh
-|4,51,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
-'4  25  4  ~/Scripts/CriaArquivo.sh
-|4,52,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
-'5  25  4  ~/Scripts/CriaArquivo.sh
-|4,53,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
-'6  25  4  ~/Scripts/CriaArquivo.sh
-|4,54,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
-'7  24  28  ~/Scripts/CriaArquivo.sh
-|4,55,24,28,1551117090,"~/Scripts/CriaArquivo.sh"
-'8  22  28  ~/Scripts/CriaArquivo.sh
-|4,56,22,28,1551117090,"~/Scripts/CriaArquivo.sh"
-'9  24  28  ~/Scripts/CriaArquivo.sh
-|4,57,24,28,1551117090,"~/Scripts/CriaArquivo.sh"
+'0  15  0  ~/Scripts/InspecionaHome.sh
+|4,48,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
+'1  13  0  ~/Scripts/MonitoraProcesso.sh
+|4,49,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
+'2  25  8  ~/Scripts/ListaUsuarios.sh
+|4,50,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+'3  3  53  ~/Scripts/ListaUsuarios.sh
+|4,51,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+'4  3  53  ~/Scripts/ListaUsuarios.sh
+|4,52,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+'5  17  0  ~/Scripts/CriaArquivo.sh
+|4,53,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+'6  30  17  ~/Scripts/CriaArquivo.sh
+|4,54,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+'7  30  17  ~/Scripts/CriaArquivo.sh
+|4,55,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+'8  25  4  ~/Scripts/CriaArquivo.sh
+|4,56,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
+'9  25  4  ~/Scripts/CriaArquivo.sh
+|4,57,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
 
 # Jumplist (newest first):
+-'  15  0  ~/Scripts/InspecionaHome.sh
+|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
+-'  1  0  ~/Scripts/InspecionaHome.sh
+|4,39,1,0,1551128687,"~/Scripts/InspecionaHome.sh"
+-'  13  0  ~/Scripts/MonitoraProcesso.sh
+|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
+-'  13  0  ~/Scripts/MonitoraProcesso.sh
+|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
+-'  1  0  ~/Scripts/MonitoraProcesso.sh
+|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
+-'  1  0  ~/Scripts/MonitoraProcesso.sh
+|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
+-'  25  8  ~/Scripts/ListaUsuarios.sh
+|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+-'  25  8  ~/Scripts/ListaUsuarios.sh
+|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+-'  25  8  ~/Scripts/ListaUsuarios.sh
+|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+-'  25  8  ~/Scripts/ListaUsuarios.sh
+|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127273,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127273,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127273,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127273,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  3  53  ~/Scripts/ListaUsuarios.sh
+|4,39,3,53,1551127244,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  4  0  ~/Scripts/ListaUsuarios.sh
+|4,39,4,0,1551127206,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127089,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127089,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127089,"~/Scripts/ListaUsuarios.sh"
+-'  1  0  ~/Scripts/ListaUsuarios.sh
+|4,39,1,0,1551127089,"~/Scripts/ListaUsuarios.sh"
 -'  17  0  ~/Scripts/CriaArquivo.sh
 |4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  17  0  ~/Scripts/CriaArquivo.sh
+|4,39,17,0,1551117955,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
+-'  1  0  ~/Scripts/CriaArquivo.sh
+|4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
 -'  1  0  ~/Scripts/CriaArquivo.sh
 |4,39,1,0,1551117870,"~/Scripts/CriaArquivo.sh"
 -'  30  17  ~/Scripts/CriaArquivo.sh
 |4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
 -'  30  17  ~/Scripts/CriaArquivo.sh
 |4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
+-'  30  17  ~/Scripts/CriaArquivo.sh
+|4,39,30,17,1551117682,"~/Scripts/CriaArquivo.sh"
 -'  1  0  ~/Scripts/CriaArquivo.sh
 |4,39,1,0,1551117651,"~/Scripts/CriaArquivo.sh"
--'  25  4  ~/Scripts/CriaArquivo.sh
-|4,39,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
--'  25  4  ~/Scripts/CriaArquivo.sh
-|4,39,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
--'  25  4  ~/Scripts/CriaArquivo.sh
-|4,39,25,4,1551117595,"~/Scripts/CriaArquivo.sh"
 -'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551117403,"~/Scripts/CriaArquivo.sh"
--'  24  28  ~/Scripts/CriaArquivo.sh
-|4,39,24,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  22  28  ~/Scripts/CriaArquivo.sh
-|4,39,22,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  24  28  ~/Scripts/CriaArquivo.sh
-|4,39,24,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  22  28  ~/Scripts/CriaArquivo.sh
-|4,39,22,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  24  28  ~/Scripts/CriaArquivo.sh
-|4,39,24,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  22  28  ~/Scripts/CriaArquivo.sh
-|4,39,22,28,1551117090,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551116293,"~/Scripts/CriaArquivo.sh"
--'  22  37  ~/Scripts/CriaArquivo.sh
-|4,39,22,37,1551116238,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551116205,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  19  0  ~/Scripts/CriaArquivo.sh
-|4,39,19,0,1551116201,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551116195,"~/Scripts/CriaArquivo.sh"
--'  22  40  ~/Scripts/CriaArquivo.sh
-|4,39,22,40,1551116161,"~/Scripts/CriaArquivo.sh"
--'  22  40  ~/Scripts/CriaArquivo.sh
-|4,39,22,40,1551116161,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551115665,"~/Scripts/CriaArquivo.sh"
--'  22  31  ~/Scripts/CriaArquivo.sh
-|4,39,22,31,1551115607,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551115535,"~/Scripts/CriaArquivo.sh"
--'  36  13  ~/Scripts/CriaArquivo.sh
-|4,39,36,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  36  13  ~/Scripts/CriaArquivo.sh
-|4,39,36,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  36  13  ~/Scripts/CriaArquivo.sh
-|4,39,36,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  34  13  ~/Scripts/CriaArquivo.sh
-|4,39,34,13,1551115425,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  16  0  ~/Scripts/CriaArquivo.sh
-|4,39,16,0,1551112868,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551112497,"~/Scripts/CriaArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
--'  7  7  ~/Scripts/PreencherArquivo.sh
-|4,39,7,7,1551112476,"~/Scripts/PreencherArquivo.sh"
+|4,39,1,0,1551117651,"~/Scripts/CriaArquivo.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/Scripts/InspecionaHome.sh
+	*	1551128763	0
+	"	15	0
+	^	13	6
+	.	13	5
+	+	15	3
+	+	5	0
+	+	15	0
+	+	5	1
+	+	6	1
+	+	15	1
+	+	5	0
+	+	15	0
+	+	10	49
+	+	7	25
+	+	9	1
+	+	10	1
+	+	14	2
+	+	7	15
+	+	8	5
+	+	7	32
+	+	14	0
+	+	11	0
+	+	12	0
+	+	10	21
+	+	11	21
+	+	12	21
+	+	10	59
+	+	11	38
+	+	12	59
+	+	11	59
+	+	13	5
+
+> ~/Scripts/MonitoraProcesso.sh
+	*	1551127855	0
+	"	13	0
+	.	22	0
+	+	12	35
+	+	18	18
+	+	21	4
+	+	5	0
+	+	12	19
+	+	18	60
+	+	12	8
+	+	5	10
+	+	9	6
+	+	5	13
+	+	12	51
+	+	19	7
+	+	18	34
+	+	22	75
+	+	12	62
+	+	22	38
+	+	12	52
+	+	22	37
+	+	12	52
+	+	22	82
+	+	12	63
+	+	22	85
+	+	18	0
+	+	12	9
+	+	14	4
+	+	17	5
+	+	18	1
+	+	19	9
+	+	20	2
+	+	16	12
+	+	19	12
+	+	3	5
+	+	8	39
+	+	22	0
+
+> ~/Scripts/ListaUsuarios.sh
+	*	1551127367	0
+	"	25	8
+	^	3	54
+	.	3	54
+	+	4	0
+	+	3	54
 
 > ~/Scripts/CriaArquivo.sh
 	*	1551117873	0
@@ -345,67 +427,6 @@
 	+	1	11
 	+	2	0
 	+	7	7
-
-> ~/Scripts/InspecionaHome.sh
-	*	1551111976	0
-	"	13	5
-	^	13	6
-	.	13	5
-	+	15	3
-	+	5	0
-	+	15	0
-	+	5	1
-	+	6	1
-	+	15	1
-	+	5	0
-	+	15	0
-	+	10	49
-	+	7	25
-	+	9	1
-	+	10	1
-	+	14	2
-	+	7	15
-	+	8	5
-	+	7	32
-	+	14	0
-	+	11	0
-	+	12	0
-	+	10	21
-	+	11	21
-	+	12	21
-	+	10	59
-	+	11	38
-	+	12	59
-	+	11	59
-	+	13	5
-
-> ~/Scripts/MonitoraProcesso.sh
-	*	1551107457	0
-	"	1	0
-	^	14	86
-	.	14	85
-	+	9	35
-	+	11	18
-	+	13	4
-	+	3	0
-	+	9	19
-	+	11	60
-	+	9	8
-	+	3	10
-	+	6	6
-	+	3	13
-	+	9	51
-	+	12	7
-	+	11	34
-	+	14	75
-	+	9	62
-	+	14	38
-	+	9	52
-	+	14	37
-	+	9	52
-	+	14	82
-	+	9	63
-	+	14	85
 
 > ~/Scripts/UsuariosHumanos.sh
 	*	1551103508	0
