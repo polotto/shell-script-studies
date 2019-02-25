@@ -157,6 +157,7 @@ Comandos principais do shell script
 
 ## bc - executa contas em uma string
 * `echo "(3 + 2) * 5"| bc` : resolve a expressão dentro do echo
+* `bc <<< "scale=2; 100/3"` : resolve a expressão dentro das aspas e retorna 33.33 (https://stackoverflow.com/questions/12722095/how-do-i-use-floating-point-division-in-bash/28541396)
 
 ## stat - mostra informações do arquivo na partição atual
 * `stat alunos.txt` : mostra informações para o arquivo alunos.txt
