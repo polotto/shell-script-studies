@@ -14,10 +14,12 @@ do
 
 	if [ $UID_U -ge $UID_MIN -a $UID_U -le $UID_MAX ]
 	then
-		USERNAME=$(user | cut -d":" -f1)
-		HOME_U=$(user | cut -d":" -f6)
-		DESC=$(user | cut -d":" -f5)
+		USERNAME=$(echo "$user" | cut -d":" -f1)
+		HOME_U=$(echo "$user" | cut -d":" -f6)
+		DESC=$(echo "$user" | cut -d":" -f5)
 		
-		echo -e "$USERNAME\t$UID_U\t$HOME_U\t$DESC"
+		echo -e "$USERNAME\t$UID_U\t$HOME_U\t\t$DESC"
 	fi
 done
+
+IFS=$OLDIFS
