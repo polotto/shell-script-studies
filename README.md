@@ -14,7 +14,7 @@ Comandos principais do shell script
 
 ## ps - lista processos atuais
 * `ps axu` : lista de processos detalhados
-* `ps axu|more` : lista com cabeçalho
+* pcaxu|more` : lista com cabeçalho
 
 ## touch - criar arquivo ou atualizar horário de um que já existe
 
@@ -630,4 +630,34 @@ do
         echo "processo em execução"
         sleep 30
 done
+```
+# Funções
+```
+function nome-funcao () {
+}
+
+nome-funcao () {
+}
+
+# chamando
+nome-funcao
+
+nome-funcao par1 par2
+
+VAR1=$(nome-funcao)
+```
+
+## varivaveis
+```
+# local
+local VAR1="Shell script"
+```
+
+## return code
+```
+# retorn code pode ser de 0 a 255
+return 10
+
+# acesso do retorno
+echo $?
 ```

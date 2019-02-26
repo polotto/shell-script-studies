@@ -11,8 +11,12 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q!
+|2,0,1551215130,,"q!"
 :x
-|2,0,1551129755,,"x"
+|2,0,1551214731,,"x"
+:7
+|2,0,1551210469,,"7"
 :w
 |2,0,1551129461,,"w"
 :22
@@ -36,262 +40,336 @@
 	
 |3,0,0,0,2,0,1551127722,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
 ""1	LINE	0
+		echo $1 | tr a-z A-Z
+|3,1,1,1,1,0,1551210590,"	echo $1 | tr a-z A-Z"
+"2	LINE	0
 	echo "Processo em execucao: $(ps axu | grep "$1" | grep -v grep | grep -v $0 | head -1)"
-|3,1,1,1,1,0,1551127850,"echo \"Processo em execucao: $(ps axu | grep \"$1\" | grep -v grep | grep -v $0 | head -1)\""
-"2	CHAR	0
+|3,0,2,1,1,0,1551127850,"echo \"Processo em execucao: $(ps axu | grep \"$1\" | grep -v grep | grep -v $0 | head -1)\""
+"3	CHAR	0
 	ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
 	
-|3,0,2,0,2,0,1551127735,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
-"3	LINE	0
-	UID_MIN=$(grep  "^UID_MIN" /etc/login.defs | egrep  | tr -s "\t"  | cut -f2)
-|3,0,3,1,1,0,1551127204,"UID_MIN=$(grep  \"^UID_MIN\" /etc/login.defs | egrep  | tr -s \"\\t\"  | cut -f2)"
+|3,0,3,0,2,0,1551127735,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
 "4	LINE	0
-		DESC=$(echo "$user" | cut -d":" -f5)
-|3,0,4,1,1,0,1551107818,"	DESC=$(echo \"$user\" | cut -d\":\" -f5)"
+	UID_MIN=$(grep  "^UID_MIN" /etc/login.defs | egrep  | tr -s "\t"  | cut -f2)
+|3,0,4,1,1,0,1551127204,"UID_MIN=$(grep  \"^UID_MIN\" /etc/login.defs | egrep  | tr -s \"\\t\"  | cut -f2)"
 "5	LINE	0
-		UID_U=$(echo "$user" | cut -d":" -f3)
-|3,0,5,1,1,0,1551107815,"	UID_U=$(echo \"$user\" | cut -d\":\" -f3)"
+		DESC=$(echo "$user" | cut -d":" -f5)
+|3,0,5,1,1,0,1551107818,"	DESC=$(echo \"$user\" | cut -d\":\" -f5)"
 "6	LINE	0
-	
-|3,0,6,1,1,0,1551107796,""
+		UID_U=$(echo "$user" | cut -d":" -f3)
+|3,0,6,1,1,0,1551107815,"	UID_U=$(echo \"$user\" | cut -d\":\" -f3)"
 "7	LINE	0
-			
-|3,0,7,1,1,0,1551107795,"		"
-"8	LINE	0
 	
-|3,0,8,1,1,0,1551107793,""
+|3,0,7,1,1,0,1551107796,""
+"8	LINE	0
+			
+|3,0,8,1,1,0,1551107795,"		"
 "9	LINE	0
-			echo -e "$USERNAME\t$UID_U\t$HOME_U\t\t$DESC"
-|3,0,9,1,1,0,1551107792,"		echo -e \"$USERNAME\\t$UID_U\\t$HOME_U\\t\\t$DESC\""
+	
+|3,0,9,1,1,0,1551107793,""
 "-	CHAR	0
 	  
 |3,0,36,0,1,0,1551127209,"  "
 
 # File marks:
-'0  19  8  ~/Scripts/CriaArquivo.sh
-|4,48,19,8,1551129755,"~/Scripts/CriaArquivo.sh"
-'1  1  0  ~/Scripts/InspecionaHome.sh
-|4,49,1,0,1551129313,"~/Scripts/InspecionaHome.sh"
-'2  18  10  ~/Scripts/InspecionaHome.sh
-|4,50,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
-'3  18  10  ~/Scripts/InspecionaHome.sh
-|4,51,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
-'4  1  0  ~/Scripts/InspecionaHome.sh
-|4,52,1,0,1551128952,"~/Scripts/InspecionaHome.sh"
-'5  1  0  ~/Scripts/InspecionaHome.sh
-|4,53,1,0,1551128952,"~/Scripts/InspecionaHome.sh"
-'6  1  0  ~/Scripts/InspecionaHome.sh
-|4,54,1,0,1551128952,"~/Scripts/InspecionaHome.sh"
-'7  17  0  ~/Scripts/InspecionaHome.sh
-|4,55,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
-'8  17  0  ~/Scripts/InspecionaHome.sh
-|4,56,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
-'9  15  0  ~/Scripts/InspecionaHome.sh
-|4,57,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
+'0  2  0  ~/Scripts/ExemploFunctionV3.sh
+|4,48,2,0,1551215130,"~/Scripts/ExemploFunctionV3.sh"
+'1  2  0  ~/Scripts/ExemploFunctionV3.sh
+|4,49,2,0,1551215088,"~/Scripts/ExemploFunctionV3.sh"
+'2  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,50,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+'3  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,51,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+'4  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,52,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+'5  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,53,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+'6  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,54,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+'7  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,55,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+'8  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,56,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+'9  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,57,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
 
 # Jumplist (newest first):
--'  19  8  ~/Scripts/CriaArquivo.sh
-|4,39,19,8,1551129755,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/CriaArquivo.sh
-|4,39,1,0,1551129428,"~/Scripts/CriaArquivo.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551129313,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551129313,"~/Scripts/InspecionaHome.sh"
--'  18  10  ~/Scripts/InspecionaHome.sh
-|4,39,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
--'  18  10  ~/Scripts/InspecionaHome.sh
-|4,39,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
--'  18  10  ~/Scripts/InspecionaHome.sh
-|4,39,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
--'  18  10  ~/Scripts/InspecionaHome.sh
-|4,39,18,10,1551129288,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551129215,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551129215,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551128952,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551128952,"~/Scripts/InspecionaHome.sh"
--'  17  0  ~/Scripts/InspecionaHome.sh
-|4,39,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  17  0  ~/Scripts/InspecionaHome.sh
-|4,39,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  17  0  ~/Scripts/InspecionaHome.sh
-|4,39,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  17  0  ~/Scripts/InspecionaHome.sh
-|4,39,17,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  15  0  ~/Scripts/InspecionaHome.sh
-|4,39,15,0,1551128764,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551128687,"~/Scripts/InspecionaHome.sh"
--'  1  0  ~/Scripts/InspecionaHome.sh
-|4,39,1,0,1551128687,"~/Scripts/InspecionaHome.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  13  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,13,0,1551127857,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  1  0  ~/Scripts/MonitoraProcesso.sh
-|4,39,1,0,1551127591,"~/Scripts/MonitoraProcesso.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
--'  25  8  ~/Scripts/ListaUsuarios.sh
-|4,39,25,8,1551127369,"~/Scripts/ListaUsuarios.sh"
+-'  2  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,2,0,1551215130,"~/Scripts/ExemploFunctionV3.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,1,0,1551215119,"~/Scripts/ExemploFunctionV3.sh"
+-'  2  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,2,0,1551215088,"~/Scripts/ExemploFunctionV3.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,1,0,1551215077,"~/Scripts/ExemploFunctionV3.sh"
+-'  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+-'  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+-'  7  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,1,0,1551214473,"~/Scripts/ExemploFunctionV3.sh"
+-'  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+-'  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+-'  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+-'  11  9  ~/Scripts/ExemploFunctionV3.sh
+|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,1,0,1551214409,"~/Scripts/ExemploFunctionV3.sh"
+-'  9  24  ~/Scripts/ExemploFunctionV3.sh
+|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
+-'  9  24  ~/Scripts/ExemploFunctionV3.sh
+|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
+-'  9  24  ~/Scripts/ExemploFunctionV3.sh
+|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
+-'  9  24  ~/Scripts/ExemploFunctionV3.sh
+|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
+-'  9  24  ~/Scripts/ExemploFunctionV3.sh
+|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV3.sh
+|4,39,1,0,1551214235,"~/Scripts/ExemploFunctionV3.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  11  13  ~/Scripts/ExemploFunctionV2.sh
+|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  1  0  ~/Scripts/ExemploFunctionV2.sh
+|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  6  9  ~/Scripts/ExemploFunctionV2.sh
+|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/Scripts/ExemploFunctionV3.sh
+	*	1551215123	0
+	"	2	0
+	^	2	11
+	.	2	0
+	+	4	21
+	+	5	11
+	+	9	24
+	+	5	8
+	+	11	10
+	+	2	0
+
+> ~/Scripts/ExemploFunctionV2.sh
+	*	1551214224	0
+	"	11	13
+	^	11	14
+	.	10	13
+	+	4	32
+	+	5	41
+	+	12	20
+	+	11	19
+	+	6	9
+	+	10	13
+
+> ~/Scripts/ExemploFunction.sh
+	*	1551211699	0
+	"	1	0
+	^	4	6
+	.	4	5
+	+	5	1
+	+	5	20
+	+	6	23
+	+	8	9
+	+	5	0
+	+	4	28
+	+	7	15
+	+	4	5
+
+> ~/Scripts/InspecionaHome.sh
+	*	1551186016	0
+	"	1	0
+	^	18	11
+	.	18	4
+	+	17	3
+	+	7	0
+	+	17	0
+	+	7	1
+	+	8	1
+	+	17	1
+	+	7	0
+	+	17	0
+	+	12	49
+	+	9	25
+	+	11	1
+	+	12	1
+	+	16	2
+	+	9	15
+	+	10	5
+	+	9	32
+	+	16	0
+	+	13	0
+	+	14	0
+	+	12	21
+	+	13	21
+	+	14	21
+	+	12	59
+	+	13	38
+	+	14	59
+	+	13	59
+	+	15	5
+	+	3	10
+	+	4	4
+	+	18	4
 
 > ~/Scripts/CriaArquivo.sh
 	*	1551129750	0
@@ -340,42 +418,6 @@
 	+	9	56
 	+	17	9
 	+	19	8
-
-> ~/Scripts/InspecionaHome.sh
-	*	1551129312	0
-	"	1	0
-	^	18	11
-	.	18	4
-	+	17	3
-	+	7	0
-	+	17	0
-	+	7	1
-	+	8	1
-	+	17	1
-	+	7	0
-	+	17	0
-	+	12	49
-	+	9	25
-	+	11	1
-	+	12	1
-	+	16	2
-	+	9	15
-	+	10	5
-	+	9	32
-	+	16	0
-	+	13	0
-	+	14	0
-	+	12	21
-	+	13	21
-	+	14	21
-	+	12	59
-	+	13	38
-	+	14	59
-	+	13	59
-	+	15	5
-	+	3	10
-	+	4	4
-	+	18	4
 
 > ~/Scripts/MonitoraProcesso.sh
 	*	1551127855	0
