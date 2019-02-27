@@ -10,11 +10,22 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~MSle0~/cut
+
 # Command Line History (newest to oldest):
+:x
+|2,0,1551301930,,"x"
+:84
+|2,0,1551301521,,"84"
+:82
+|2,0,1551301426,,"82"
+:110
+|2,0,1551301168,,"110"
+:41
+|2,0,1551297750,,"41"
 :q!
 |2,0,1551215130,,"q!"
-:x
-|2,0,1551214731,,"x"
 :7
 |2,0,1551210469,,"7"
 :w
@@ -27,6 +38,12 @@
 |2,0,1551103424,,"z"
 
 # Search String History (newest to oldest):
+?/cut
+|2,1,1551301119,47,"cut"
+?/cur
+|2,1,1551301116,47,"cur"
+?/02/1991"
+|2,1,1551299845,47,"02/1991\""
 
 # Expression History (newest to oldest):
 
@@ -35,267 +52,388 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
-	
-|3,0,0,0,2,0,1551127722,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
+"0	LINE	0
+		local DD=$1
+		local MM=$2
+		local YY=$3
+|3,0,0,1,3,0,1551299875,"	local DD=$1","	local MM=$2","	local YY=$3"
 ""1	LINE	0
-		echo $1 | tr a-z A-Z
-|3,1,1,1,1,0,1551210590,"	echo $1 | tr a-z A-Z"
+			echo "br 0"
+|3,1,1,1,1,0,1551301927,"		echo \"br 0\""
 "2	LINE	0
-	echo "Processo em execucao: $(ps axu | grep "$1" | grep -v grep | grep -v $0 | head -1)"
-|3,0,2,1,1,0,1551127850,"echo \"Processo em execucao: $(ps axu | grep \"$1\" | grep -v grep | grep -v $0 | head -1)\""
+	
+|3,0,2,1,1,0,1551299841,""
 "3	CHAR	0
-	ps axu | grep "$1" | grep -v grep | grep -v $0 > /dev/null
-	
-|3,0,3,0,2,0,1551127735,"ps axu | grep \"$1\" | grep -v grep | grep -v $0 > /dev/null",""
+	 
+		
+	}
+|3,0,3,0,3,0,1551299841," ","	","}"
 "4	LINE	0
-	UID_MIN=$(grep  "^UID_MIN" /etc/login.defs | egrep  | tr -s "\t"  | cut -f2)
-|3,0,4,1,1,0,1551127204,"UID_MIN=$(grep  \"^UID_MIN\" /etc/login.defs | egrep  | tr -s \"\\t\"  | cut -f2)"
+		
+|3,0,4,1,1,0,1551297597,"	"
 "5	LINE	0
-		DESC=$(echo "$user" | cut -d":" -f5)
-|3,0,5,1,1,0,1551107818,"	DESC=$(echo \"$user\" | cut -d\":\" -f5)"
+	
+		if [ $DD -eq $MM -a $DD -le 12 ]
+		then
+			return 2
+		elif [ $DD -gt 12 -a $MM -gt 31 -o $DD -gt 31 -a $MM -gt 12  ]
+		then
+			return 3
+		elif [ $DD -gt 12 ]
+		then
+			return 0
+		elif [ $MM -gt 12 ]
+		then
+			return 1
+		fi
+|3,0,5,1,14,0,1551294318,"","	if [ $DD -eq $MM -a $DD -le 12 ]","	then","		return 2","	elif [ $DD -gt 12 -a $MM -gt 31 -o $DD -gt 31 -a $MM -gt 12  ]","	then","		return 3","	elif [ $DD -gt 12 ]","	then","		return 0","	elif [ $MM -gt 12 ]","	then","		return 1","	fi"
 "6	LINE	0
-		UID_U=$(echo "$user" | cut -d":" -f3)
-|3,0,6,1,1,0,1551107815,"	UID_U=$(echo \"$user\" | cut -d\":\" -f3)"
+	
+|3,0,6,1,1,0,1551294243,""
 "7	LINE	0
-	
-|3,0,7,1,1,0,1551107796,""
+			return 0
+|3,0,7,1,1,0,1551294239,"		return 0"
 "8	LINE	0
-			
-|3,0,8,1,1,0,1551107795,"		"
+			date "+%m/%d/%Y" -d "$DD/$MM/$YY" > /dev/null 2>&1
+|3,0,8,1,1,0,1551294131,"		date \"+%m/%d/%Y\" -d \"$DD/$MM/$YY\" > /dev/null 2>&1"
 "9	LINE	0
-	
-|3,0,9,1,1,0,1551107793,""
+		MM=$2
+|3,0,9,1,1,0,1551293824,"	MM=$2"
 "-	CHAR	0
-	  
-|3,0,36,0,1,0,1551127209,"  "
+	xibe
+|3,0,36,0,1,0,1551299841,"xibe"
 
 # File marks:
-'0  2  0  ~/Scripts/ExemploFunctionV3.sh
-|4,48,2,0,1551215130,"~/Scripts/ExemploFunctionV3.sh"
-'1  2  0  ~/Scripts/ExemploFunctionV3.sh
-|4,49,2,0,1551215088,"~/Scripts/ExemploFunctionV3.sh"
-'2  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,50,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
-'3  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,51,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
-'4  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,52,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
-'5  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,53,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
-'6  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,54,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
-'7  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,55,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
-'8  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,56,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
-'9  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,57,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
+'0  39  5  ~/Scripts/FuncoesDiversas.sh
+|4,48,39,5,1551301930,"~/Scripts/FuncoesDiversas.sh"
+'1  118  3  ~/Scripts/FuncoesDiversas.sh
+|4,49,118,3,1551301902,"~/Scripts/FuncoesDiversas.sh"
+'2  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,50,119,3,1551301902,"~/Scripts/FuncoesDiversas.sh"
+'3  38  12  ~/Scripts/FuncoesDiversas.sh
+|4,51,38,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+'4  32  12  ~/Scripts/FuncoesDiversas.sh
+|4,52,32,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+'5  38  12  ~/Scripts/FuncoesDiversas.sh
+|4,53,38,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+'6  32  12  ~/Scripts/FuncoesDiversas.sh
+|4,54,32,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+'7  92  16  ~/Scripts/FuncoesDiversas.sh
+|4,55,92,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+'8  91  16  ~/Scripts/FuncoesDiversas.sh
+|4,56,91,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+'9  86  16  ~/Scripts/FuncoesDiversas.sh
+|4,57,86,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
 
 # Jumplist (newest first):
--'  2  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,2,0,1551215130,"~/Scripts/ExemploFunctionV3.sh"
--'  1  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,1,0,1551215119,"~/Scripts/ExemploFunctionV3.sh"
--'  2  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,2,0,1551215088,"~/Scripts/ExemploFunctionV3.sh"
--'  1  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,1,0,1551215077,"~/Scripts/ExemploFunctionV3.sh"
--'  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
--'  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
--'  7  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,7,0,1551214731,"~/Scripts/ExemploFunctionV3.sh"
--'  1  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,1,0,1551214473,"~/Scripts/ExemploFunctionV3.sh"
--'  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
--'  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
--'  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
--'  11  9  ~/Scripts/ExemploFunctionV3.sh
-|4,39,11,9,1551214453,"~/Scripts/ExemploFunctionV3.sh"
--'  1  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,1,0,1551214409,"~/Scripts/ExemploFunctionV3.sh"
--'  9  24  ~/Scripts/ExemploFunctionV3.sh
-|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
--'  9  24  ~/Scripts/ExemploFunctionV3.sh
-|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
--'  9  24  ~/Scripts/ExemploFunctionV3.sh
-|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
--'  9  24  ~/Scripts/ExemploFunctionV3.sh
-|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
--'  9  24  ~/Scripts/ExemploFunctionV3.sh
-|4,39,9,24,1551214377,"~/Scripts/ExemploFunctionV3.sh"
--'  1  0  ~/Scripts/ExemploFunctionV3.sh
-|4,39,1,0,1551214235,"~/Scripts/ExemploFunctionV3.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  11  13  ~/Scripts/ExemploFunctionV2.sh
-|4,39,11,13,1551214225,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  1  0  ~/Scripts/ExemploFunctionV2.sh
-|4,39,1,0,1551213279,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
--'  6  9  ~/Scripts/ExemploFunctionV2.sh
-|4,39,6,9,1551213270,"~/Scripts/ExemploFunctionV2.sh"
+-'  39  5  ~/Scripts/FuncoesDiversas.sh
+|4,39,39,5,1551301930,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301921,"~/Scripts/FuncoesDiversas.sh"
+-'  118  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,3,1551301902,"~/Scripts/FuncoesDiversas.sh"
+-'  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,119,3,1551301902,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301653,"~/Scripts/FuncoesDiversas.sh"
+-'  38  12  ~/Scripts/FuncoesDiversas.sh
+|4,39,38,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+-'  32  12  ~/Scripts/FuncoesDiversas.sh
+|4,39,32,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+-'  38  12  ~/Scripts/FuncoesDiversas.sh
+|4,39,38,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+-'  32  12  ~/Scripts/FuncoesDiversas.sh
+|4,39,32,12,1551301640,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301594,"~/Scripts/FuncoesDiversas.sh"
+-'  92  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,92,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  91  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,91,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  86  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,86,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  85  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,85,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  93  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,93,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  92  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,92,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  87  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,87,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  86  16  ~/Scripts/FuncoesDiversas.sh
+|4,39,86,16,1551301536,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301513,"~/Scripts/FuncoesDiversas.sh"
+-'  101  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,101,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  100  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,100,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  95  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,95,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  94  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  102  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,102,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  101  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,101,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  96  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,96,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  95  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,95,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  95  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,95,3,1551301500,"~/Scripts/FuncoesDiversas.sh"
+-'  9  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,9,0,1551301479,"~/Scripts/FuncoesDiversas.sh"
+-'  9  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,9,0,1551301479,"~/Scripts/FuncoesDiversas.sh"
+-'  9  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,9,0,1551301479,"~/Scripts/FuncoesDiversas.sh"
+-'  9  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,9,0,1551301479,"~/Scripts/FuncoesDiversas.sh"
+-'  9  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,9,0,1551301479,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301477,"~/Scripts/FuncoesDiversas.sh"
+-'  105  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,105,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  104  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,104,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  103  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,103,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  99  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,99,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  98  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,98,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  97  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,97,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  106  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,106,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  105  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,105,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  104  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,104,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  100  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,100,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  99  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,99,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  99  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,99,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  98  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,98,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  99  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,99,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  98  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,98,3,1551301467,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301423,"~/Scripts/FuncoesDiversas.sh"
+-'  125  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,125,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  124  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,124,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  123  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,123,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,119,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  117  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,117,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  126  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,126,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  125  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,125,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  124  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,124,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  120  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,120,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,119,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,119,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  118  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  119  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,119,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  118  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  118  3  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,3,1551301348,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  8  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,8,0,1551301322,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301320,"~/Scripts/FuncoesDiversas.sh"
+-'  93  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,93,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  100  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,100,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  95  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,95,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  94  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  94  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  94  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  94  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  94  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,94,0,1551301301,"~/Scripts/FuncoesDiversas.sh"
+-'  42  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,42,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  41  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,41,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  37  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,37,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  43  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,43,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  42  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,42,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  37  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,37,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  36  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,36,0,1551301285,"~/Scripts/FuncoesDiversas.sh"
+-'  1  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,1,0,1551301280,"~/Scripts/FuncoesDiversas.sh"
+-'  118  9  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,9,1551301268,"~/Scripts/FuncoesDiversas.sh"
+-'  118  9  ~/Scripts/FuncoesDiversas.sh
+|4,39,118,9,1551301268,"~/Scripts/FuncoesDiversas.sh"
+-'  62  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,62,0,1551301223,"~/Scripts/FuncoesDiversas.sh"
+-'  61  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,61,0,1551301223,"~/Scripts/FuncoesDiversas.sh"
+-'  56  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,56,0,1551301223,"~/Scripts/FuncoesDiversas.sh"
+-'  55  0  ~/Scripts/FuncoesDiversas.sh
+|4,39,55,0,1551301223,"~/Scripts/FuncoesDiversas.sh"
 
 # History of marks within files (newest to oldest):
+
+> ~/Scripts/FuncoesDiversas.sh
+	*	1551301928	0
+	"	39	5
+	^	118	4
+	.	38	0
+	+	54	6
+	+	57	6
+	+	71	12
+	+	72	12
+	+	75	17
+	+	78	16
+	+	85	0
+	+	78	0
+	+	83	0
+	+	71	1
+	+	79	0
+	+	82	0
+	+	83	31
+	+	86	15
+	+	78	14
+	+	86	32
+	+	89	0
+	+	94	0
+	+	86	30
+	+	88	13
+	+	97	5
+	+	98	4
+	+	113	4
+	+	114	4
+	+	96	5
+	+	99	11
+	+	103	8
+	+	106	1
+	+	93	0
+	+	91	30
+	+	91	1
+	+	90	0
+	+	91	12
+	+	90	17
+	+	88	25
+	+	90	25
+	+	91	10
+	+	92	10
+	+	91	12
+	+	90	12
+	+	88	26
+	+	91	26
+	+	90	27
+	+	92	25
+	+	91	26
+	+	92	26
+	+	99	23
+	+	103	20
+	+	106	19
+	+	109	18
+	+	112	22
+	+	125	9
+	+	115	1
+	+	116	0
+	+	125	6
+	+	86	18
+	+	87	0
+	+	125	5
+	+	117	14
+	+	123	1
+	+	119	42
+	+	120	34
+	+	119	29
+	+	120	48
+	+	122	6
+	+	117	10
+	+	95	8
+	+	98	4
+	+	102	1
+	+	105	4
+	+	108	4
+	+	90	25
+	+	91	25
+	+	92	25
+	+	117	12
+	+	119	19
+	+	121	41
+	+	95	7
+	+	98	1
+	+	102	3
+	+	105	4
+	+	108	1
+	+	105	1
+	+	88	18
+	+	102	0
+	+	100	8
+	+	90	16
+	+	91	16
+	+	92	16
+	+	38	12
+	+	24	16
+	+	30	16
+	+	20	51
+	+	22	0
+	+	24	30
+	+	29	18
+	+	27	0
+	+	53	28
+	+	56	28
+	+	38	0
 
 > ~/Scripts/ExemploFunctionV3.sh
 	*	1551215123	0
