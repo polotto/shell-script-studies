@@ -14,7 +14,7 @@ Comandos principais do shell script
 
 ## ps - lista processos atuais
 * `ps axu` : lista de processos detalhados
-* `ps axu|more` : lista com cabeçalho
+* pcaxu|more` : lista com cabeçalho
 
 ## touch - criar arquivo ou atualizar horário de um que já existe
 
@@ -323,6 +323,7 @@ export VAR1=teste # exporta e cria a variável
 * `./script.sh` : abre um shell filho do atual, executa o script e retorna o resultado
 * `source script.sh` ou `. script.sh`: executa o script na sessão atual do shell
 * `bash script.sh` : executa o script com um interpretador específico
+* `./script.sh &` : executa o script em modo deamon, ou seja, em background
 
 ## alterando o PATH
 * `PATH="$PATH:/home/usuario/Cursos/ShellScript/Scripts"` : adiciona ao PATH o meu diretório de scripts
@@ -629,4 +630,34 @@ do
         echo "processo em execução"
         sleep 30
 done
+```
+# Funções
+```
+function nome-funcao () {
+}
+
+nome-funcao () {
+}
+
+# chamando
+nome-funcao
+
+nome-funcao par1 par2
+
+VAR1=$(nome-funcao)
+```
+
+## varivaveis
+```
+# local
+local VAR1="Shell script"
+```
+
+## return code
+```
+# retorn code pode ser de 0 a 255
+return 10
+
+# acesso do retorno
+echo $?
 ```

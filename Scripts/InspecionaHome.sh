@@ -1,5 +1,7 @@
 #!/bin/bash
 
+OLDIFS=$IFS
+IFS=$'\n'
 for user in $(cat /etc/passwd)
 do
 	USERNAME=$(echo "$user" | cut -d":" -f1)
@@ -13,3 +15,4 @@ do
 		echo
 	fi
 done
+IFS=$OLDIFS

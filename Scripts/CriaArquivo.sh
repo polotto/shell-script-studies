@@ -2,10 +2,11 @@
 
 read -p "Digite o nome do arquivo: " ARQ
 read -p "Caracteres para serem utilizados: " CARAC
-read -p "Tamanho final do arquivo: " TAM
+read -p "Tamanho final do arquivo (em bytes): " TAM
 
 if ls "$ARQ" > /dev/null 2>&1
 then
+	# cat /dev/null > "$ARQ" # limpa o arquivo sem remove-lo
 	rm -r "$ARQ"
 fi
 
@@ -13,9 +14,9 @@ POR=10
 
 echo "Gerando o arquivo..."
 
-while : ;
+while true
 do
-	echo "$CARAC" >> $ARQ
+	echo -n "$CARAC" >> $ARQ
 	
 	TAM_ARQ=$(stat -c '%s' "$ARQ")
 	
