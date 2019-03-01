@@ -32,7 +32,7 @@ echo "Exibir data e hora atual: $DATAHORA "
 # Area de leitura da lista de alunos
 echo "==============================="
 echo "Listagem dos Alunos: "
-sort $ARQUIVOALUNOS # Caminho do arquivo relativo 
+sort $ARQUIVOALUNOS | tee -a >(logger -p local0.warn -t [$0]) # Caminho do arquivo relativo 
 
 DATAHORA=$(date +%H)
 echo "==============================="

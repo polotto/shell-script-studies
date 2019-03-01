@@ -711,4 +711,4 @@ local2.*	/var/log/outroscript.log
 * (opcional) mudar permissão do arquivo de log para as mesmas do syslog: chown syslog:adm scripts.log
 * para criar logs dentro do script, utilize o comando: `logger -p local0.err "teste de mensagem de erro"`
 * para criar logs dentro do script com tag: `logger -p local0.warn -t [Script Novo] "teste de mensagem de erro"`
-
+* para criar logs e mostrar na tela: `sort $ARQUIVOALUNOS | tee -a >(logger -p local0.warn -t [$0])`
