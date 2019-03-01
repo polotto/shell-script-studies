@@ -631,6 +631,7 @@ do
         sleep 30
 done
 ```
+
 # Funções
 ```
 function nome-funcao () {
@@ -660,4 +661,37 @@ return 10
 
 # acesso do retorno
 echo $?
+```
+
+# Logs
+## Redirecionamento
+```
+# redireciona saida normal e de erro para um arquivo
+./Script.sh >> log.out 2>&1
+
+# redireciona saida normal e de erro para um arquivo e para a tela
+./Script.sh | tee -a log.out
+```
+
+## exec
+```
+# redireciona todas as saídas do script em um arquivo
+# mesmo sem especificar com > ou utulizar o tee
+LOG="$HOME/Scripts/log_interno.out"
+exec 1>> $LOG
+exec 2>&1
+
+echo "teste"
+echo "teste 2"
+```
+
+### exec com tee
+```
+LOG="$HOME/Scripts/log_interno.out"
+# mostra na tela e coloca no arquivo de log
+exec 1>> >(tee -a "$LOG")
+exec 2>&1
+ 
+echo "teste"
+echo "teste 2"
 ```
