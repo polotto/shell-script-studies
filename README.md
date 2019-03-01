@@ -695,3 +695,20 @@ exec 2>&1
 echo "teste"
 echo "teste 2"
 ```
+
+## rsyslog - sistemas de log do linux
+* criar um arquivo novo em /etc/rsyslog.d/scripts.conf
+* criar os facilities, priorities e caminho:
+```
+# facilities.pririties	path
+local0.*	/var/log/scripts.log
+local1.*	/var/log/scripts.log
+local2.*	/var/log/outroscript.log
+```
+* reiniciar o rsyslog: service rsyslog restart (systemctl restart rsyslog)
+* verificar se reiniciou olhando o horário do processo: ps axu | grep rsyslog
+* (opcional) criar o arquivo de log: touch /var/log/scripts.log
+* (opcional) mudar permissão do arquivo de log para as mesmas do syslog: chown syslog:adm scripts.log
+* para criar logs dentro do script, utilize o comando: `logger -p local0.err "teste de mensagem de erro"`
+* para criar logs dentro do script com tag: `logger -p local0.warn -t [Script Novo] "teste de mensagem de erro"`
+

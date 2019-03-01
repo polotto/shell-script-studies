@@ -19,6 +19,7 @@ case $OPT in
 		-e LANGUAGE=en_US:en \
 		-e LC_ALL=en_US.UTF-8 \
   		-v "$LMAP":"$CVMAP" \
+  		-v "$LMAP/rsyslog.d":"/etc/rsyslog.d" \
 		-d -t -i \
 		debian 
 
@@ -30,8 +31,11 @@ case $OPT in
 		docker exec $CONTAINERNAME bash -c "apt-get -y install vim"
 
 		docker exec $CONTAINERNAME bash -c "apt-get -y install locales"
-		docker exec $CONTAINERNAME bash -c "RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen"
-				
+		docker exec $CONTAINERNAME bash -c "sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen"
+
+		docker exec $CONTAINERNAME bash -c "apt-get -y install rsyslog"
+		docker exec $CONTAINERNAME bash -c "service rsyslog start"
+		
 		docker exec -it $CONTAINERNAME bash
 		;;
 	2)
