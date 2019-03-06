@@ -697,6 +697,7 @@ echo "teste 2"
 ```
 
 ## rsyslog - sistemas de log do linux
+* instalar o rsyslog: `sudo apt-get -y install rsyslog`
 * criar um arquivo novo em /etc/rsyslog.d/scripts.conf
 * criar os facilities, priorities e caminho:
 ```
@@ -712,3 +713,26 @@ local2.*	/var/log/outroscript.log
 * para criar logs dentro do script, utilize o comando: `logger -p local0.err "teste de mensagem de erro"`
 * para criar logs dentro do script com tag: `logger -p local0.warn -t [Script Novo] "teste de mensagem de erro"`
 * para criar logs e mostrar na tela: `sort $ARQUIVOALUNOS | tee -a >(logger -p local0.warn -t [$0])`
+
+## mail - enviando email contendo os logs para servidores internos
+* instalar o cliente de email: `sudo apt-get install bsd-mailx`
+* instalar o postfix para enviar emails internos: `sudo apt-get install postfix`
+* reiniciar o postfix: `service postfix restart` (https://www.tecmint.com/setup-postfix-mail-server-in-ubuntu-debian/)
+* enviando email:
+```
+mail -s "assunto" mail@email.com < arquivo.txt # se for local, nome do usuário: ex ricardo
+# ou
+echo "teste email" | mail -s "testando" mail@email.com # se for local, nome do usuário ex: root
+```
+* verificando caixa de entrada de email: `mail`
+
+## mutt - cliente de email para o mail do shell, funciona para enviar email por servidores externos
+* instalação:  `sudo apt-get install mutt`
+
+## sendemail - cliente de email SMTP para a o shell, enviar email através de servidores externos
+* instalação: `sudo apt-get install sendemail`
+* github: https://github.com/mogaal/sendemail
+* tutorial: https://www.vivaolinux.com.br/artigo/Enviando-emails-pelo-terminal
+
+
+
