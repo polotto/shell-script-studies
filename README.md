@@ -47,6 +47,7 @@ Comandos principais do shell script
 
 ## tail - mostra somente as últimas 10 linhas  do arquivo
 * `tail -n2 arquivo` : mostra somente as 2 últimas linhas
+* `tail -f arquivo` : monitora por mudanças as últimas 10 linhas do arquivo até que seja interrompido (follow)
 
 ## head - mostra as primeiras 10 linhas do arquivo
 * `head -n2 arquivo` : mostra somente as 2 primeiras linhas
@@ -734,5 +735,59 @@ echo "teste email" | mail -s "testando" mail@email.com # se for local, nome do u
 * github: https://github.com/mogaal/sendemail
 * tutorial: https://www.vivaolinux.com.br/artigo/Enviando-emails-pelo-terminal
 
+# Depuração (debug) do script
+## `bash -n` - Verificando a sintax sem executar o script
+* importante para verificar a sintax sem executar o script, evitar casos onde o script deleta um arquivo ou faz alguma modificação antes de estourar o erro:
+```
+bash -n Script.sh
+```
 
+## `bash -x` - Verificando quais comando estão sendo executados
+* mostra com o sinal de `+` todos os comandos que foram executados e o seu resultado, caso haja execução em sub-shell, utiliza o `++` para indicar:
+```
+bash -x Script.sh
+```
 
+## `bash -v` -  Verificado blocos de comando
+* mostra o bloco que será executado e em seguida o resultado da execução:
+```
+bash -v Script.sh
+```
+
+## `bash -xv` - Forma completa de inspecionar o script
+* mostra o bloco, a execução e o resultado, funciona melhor para validar ifs
+```
+bash -xv Script.sh
+```
+
+## `set -xv` - Depuração em trechos dentro do script
+* utilizado para executar a duperação (debug) dentro do script em determinado trechos.
+```
+echo "inicio debug"
+echo
+
+set -xv
+date
+echo "testando"
+set +xv
+
+echo "fim do debug
+```
+
+## `trap read` - Depuração passo a passo
+* executa o script passo a passo, aguarda pressionar o enter a cada linha executada.
+```
+clear
+echo "inicio debug"
+echo
+
+set -xv
+trap read DEBUG # começa o debug passo a passo
+
+date
+echo "testando"
+
+trap "" DEBUG # Finalizando a execução passo a passo
+
+echo "fim do debug
+```

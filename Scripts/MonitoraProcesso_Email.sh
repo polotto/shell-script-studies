@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ADMIN=root
+EMAIL=root
 TIME=5
 
 if [ $# -ne 1 ]
@@ -16,7 +16,7 @@ do
 	then
 		sleep $TIME
 	else
-		echo "ATENCAO!!!!!! O processo $1 NAO esta em execucao!" | mail -s "$0" $ADMIN
+		echo "ATENCAO!!!!!! O processo $1 NAO esta em execucao!" | mail -s "$0" $EMAIL
 		sleep $TIME
 	fi
 done
