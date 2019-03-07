@@ -47,6 +47,7 @@ Comandos principais do shell script
 
 ## tail - mostra somente as últimas 10 linhas  do arquivo
 * `tail -n2 arquivo` : mostra somente as 2 últimas linhas
+* `tail -f arquivo` : monitora por mudanças as últimas 10 linhas do arquivo até que seja interrompido (follow)
 
 ## head - mostra as primeiras 10 linhas do arquivo
 * `head -n2 arquivo` : mostra somente as 2 primeiras linhas
