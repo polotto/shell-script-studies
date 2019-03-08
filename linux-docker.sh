@@ -63,6 +63,7 @@ case $OPT in
 		docker exec -it $CONTAINERNAME bash
 		;;
 	a)
+		echo "-----------------> starting bash..."
 		docker run \
 		--name $CONTAINERNAME \
 		-e HOST_IP=$(ifconfig en0 | awk '/ *inet /{print $2}') \
@@ -71,17 +72,20 @@ case $OPT in
 		alpine sh
 		;;
 	c)
+		echo "-----------------> starting bash..."
 		docker exec -it $CONTAINERNAME bash
 		;;
 	s)
+		echo "-----------------> stopping container..."
 		docker container stop $CONTAINERNAME
+		echo "-----------------> removing container..."
 		docker container rm $CONTAINERNAME
 		;;
 	q)
-		echo "quiting..."
+		echo "-----------------> quiting..."
 		exit
 		;;
 	*)
-		echo "Invalid option"
+		echo "-----------------> invalid option..."
 		;;
 esac
