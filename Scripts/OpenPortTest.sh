@@ -1,9 +1,9 @@
 #!/bin/bash
 
+LOG="./OpenPorts.txt"
 URL="http://portquiz.net"
 CURL_STD_OUT="/dev/null"
 CURL_ERR_OUT="/dev/null"
-LOG="./OpenPorts.txt"
 TIMEOUT=1
 # Port range to any proposal TCP use: 5001-49151
 # Source: http://cubicspot.blogspot.com/2016/04/need-random-tcp-port-number-for-your.html
@@ -16,6 +16,13 @@ exec 2>&1
 
 echo
 echo
+echo "$(date) - Script is running..."
+echo "************************* Configurations ********************************"
+echo "LOG: $LOG"
+echo "CURL_STD_OUT: $CURL_STD_OUT - CURL_ERR_OUT: $CURL_ERR_OUT"
+echo "TIMEOUT: $TIMEOUT"
+echo "MIN_PORT: $MIN_PORT - MAX_PORT: $MAX_PORT"
+echo "*************************************************************************"
 echo "$(date) - Starting open port test (ref url: $URL)..."
 
 for PORT in $(seq $MIN_PORT $MAX_PORT)
